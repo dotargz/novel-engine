@@ -54,7 +54,7 @@ function executeAction($actions)
         switch ($key) {
             case 'end':
                 $_SESSION['user_data']['story']['currentPage'] = null;
-                header("Location: {$_SERVER['PHP_SELF']}");
+                header("Location: /");
                 exit();
 
             case 'goto':
@@ -68,7 +68,7 @@ function executeAction($actions)
                 }
 
                 $_SESSION['user_data']['story']['currentPage'] = $value;
-                header("Location: {$_SERVER['PHP_SELF']}");
+                header("Location: /");
                 exit();
 
             case str_sw($key, 'set-'):
