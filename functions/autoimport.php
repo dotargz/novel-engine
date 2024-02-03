@@ -7,5 +7,5 @@ if (!isset($_SESSION['theme'])) {
     $_SESSION['theme'] = 'default';
 }
 
-include_once 'functions.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/functions/functions.php';
 ?>

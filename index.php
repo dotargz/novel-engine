@@ -1,6 +1,6 @@
 <?php
 # session is started in autoimport.php
-include_once 'functions/autoimport.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/functions/autoimport.php';
 
 if (!isset($_SESSION['user_data']['story']['currentPage'])) {
     $_SESSION['user_data']['story']['currentPage'] = 'beginning';
@@ -39,6 +39,6 @@ include 'components/header.php';
     </div>
 </div>
 <?php
-include 'components/footer.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/components/footer.php';
 ?>
 
