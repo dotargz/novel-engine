@@ -71,7 +71,7 @@ function executeAction($actions)
                 header("Location: {$_SERVER['PHP_SELF']}");
                 exit();
 
-            case str_starts_with($key, 'set-'):
+            case str_sw($key, 'set-'):
                 $key = str_replace('set-', '', $key);
                 $_SESSION['user_data']['character'][$key] = $value;
                 break;
@@ -83,7 +83,7 @@ function executeAction($actions)
 }
 
 
-function str_starts_with($haystack, $needle)
+function str_sw($haystack, $needle)
 {
     return strpos($haystack, $needle) === 0;
 }
