@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?php echo $title; ?> ~ ami's story
+        <?php echo $title; ?> ~ NovelEngine
     </title>
 
     <script src="https://kit.fontawesome.com/9cb2f2488a.js" crossorigin="anonymous"></script>
