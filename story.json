@@ -1,0 +1,111 @@
+{
+	"character": {
+		"vaild_races": ["human", "elf", "orc"],
+		"vaild_classes": ["warrior", "mage", "thief"],
+		"vaild_sexs": ["female", "male", "non-binary", "none"],
+		"vaild_alignments": ["good", "neutral", "evil"]
+	},
+	"story": {
+		"beginning": {
+			"heading": "An adventure begins...?",
+			"text": "You have a splitting headache. You don't remember how you got here, but you are laying in a warm bed. You look around and see a small room with a window, a door, and a small table with a lamp. As you sit up, you notice yourself in the mirror. What do you look like?",
+			"options": {
+				"human": {
+					"text": "I'm a human",
+					"action": "set-race, human; goto, beginning II"
+				},
+				"elf": {
+					"text": "I'm an elf",
+					"action": "set-race, elf; goto, beginning II"
+				},
+				"orc": {
+					"text": "I'm an orc",
+					"action": "set-race, orc; goto, beginning II"
+				}
+			}
+		},
+		"beginning II": {
+			"heading": "An adventure begins?",
+			"text": "Your headache persists, but you feel a little better. Questions rush through your mind; Who are you? Why are you here? Maybe these questions will be answered in time... As you look in the mirror, you realize you don't even remember your name. But one thing is clear, you are a...",
+			"options": {
+				"female": {
+					"text": "female {{character.race}}",
+					"action": "set-sex, female; goto, beginning III"
+				},
+				"male": {
+					"text": "male {{character.race}}",
+					"action": "set-sex, male; goto, beginning III"
+				},
+				"non-binary": {
+					"text": "non-binary {{character.race}}",
+					"action": "set-sex, non-binary; goto, beginning III"
+				},
+				"none": {
+					"text": "{{character.race}}",
+					"action": "set-sex, none; goto, beginning III"
+				}
+			}
+		},
+		"beginning III": {
+			"heading": "An adventure begins...",
+			"text": "You look around the room and see a small chest at the foot of the bed. You open it and find a small bag of coins, a dagger, and a note. The note reads, 'You are in the town of Oakwood. You were found unconcious in the woods. You are welcome to stay here as long as you need. If you are looking for work, talk to the innkeeper.'",
+			"options": {
+				"get-up": {
+					"text": "Get up and explore the town",
+					"action": "goto, beginning IV"
+				},
+				"stay-in-bed": {
+					"text": "Stay in bed and rest",
+					"action": "goto, bedroom idle"
+				}
+			}
+		},
+		"bedroom idle": {
+			"heading": "An adventure begins???",
+			"text": "You lay back down and rest. You wake up feeling refreshed and ready to explore the town.",
+			"options": {
+				"get-up": {
+					"text": "Get up and explore the town",
+					"action": "goto, beginning IV"
+				}
+			}
+		},
+		"beginning IV": {
+			"heading": "An adventure begins!",
+			"text": "You leave the room and find yourself in a small inn. The innkeeper greets you and offers you a meal. You eat and then ask about work. The innkeeper tells you that the town has been having trouble with bandits and that the town guard could use some help. You decide to help the town guard and head to the town square.",
+			"options": {
+				"goto-town-square": {
+					"text": "Go to the town square",
+					"action": "goto, town square"
+				},
+                "rush-to-help": {
+                    "text": "Rush to help the town guard",
+                    "action": "goto, bandit attack",
+                    "requirements": {
+                        "class": "warrior"
+                    }
+                }
+			}
+		},
+		"town square": {
+			"heading": "End of Demo",
+			"text": "This is the end of the demo. Thank you for playing! We are planning to make a full game with more story, characters, and choices. If you would like to support us, please consider contributing to our github repository.",
+			"options": {
+				"end": {
+					"text": "End",
+					"action": "end"
+				}
+			}
+		},
+		"bandit attack": {
+			"heading": "Bandit Attack",
+			"text": "You rush to the town square and see a group of bandits attacking the town guard. You draw your weapon and rush to help. This is the end of the demo. Thank you for playing!",
+			"options": {
+				"end": {
+					"text": "End",
+					"action": "end"
+				}
+			}
+		}
+	}
+}

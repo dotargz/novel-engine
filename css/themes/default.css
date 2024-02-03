@@ -1,0 +1,37 @@
+:root {
+    --display-font: 'Noto Serif', serif;
+    --text-font: 'Noto Serif', serif;
+    --bg-color: #f4f4f4;
+    --bg-gradient: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+    --border-radius: 0;
+    --border: #333 1px solid;
+    --text-color: #333;
+    --text-color-secondary: #f4f4f4;
+
+    --button-bg-color: transparent;
+    --button-text-color: #333;
+    --button-border: #333 1px solid;
+    --button-border-radius: 0;
+    --button-hover-bg-color: #333;
+
+    --warning-bg-color: #f4f4f4;
+    --warning-text-color: #333;
+    --warning-border: #333 1px solid;
+    --warning-hover-bg-color: #aa2a2a;
+    --warning-hover-text-color: #f4f4f4;
+    --warning-hover-border: #aa2a2a 1px solid;
+
+    --page-id-font-style: italic;
+    --page-id-border: none;
+    --page-id-bg-color: transparent;
+    --page-id-text-color: #333;
+    --page-id-margin-bottom: 0;
+
+    --options-border: none;
+    --options-border-top: #333 1px solid;
+    --options-border-bottom: #333 1px solid;
+    --options-border-left: 0;
+    --options-border-right: 0;
+    --options-bg-color: transparent;
+
+}

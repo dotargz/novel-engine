@@ -1,0 +1,37 @@
+:root {
+    --display-font: 'Noto Serif', serif;
+    --text-font: 'Noto Serif', serif;
+    --bg-color: #000;
+    --bg-gradient: linear-gradient(to top, #000000 0%, #000000 99%, #000000 100%);
+    --border-radius: 0;
+    --border: #f4f4f4 1px solid;
+    --text-color: #f4f4f4;
+    --text-color-secondary: #000;
+
+    --button-bg-color: transparent;
+    --button-text-color: #f4f4f4;
+    --button-border: #f4f4f4 1px solid;
+    --button-border-radius: 0;
+    --button-hover-bg-color: #f4f4f4;
+
+    --warning-bg-color: #000;
+    --warning-text-color: #f4f4f4;
+    --warning-border: #f4f4f4 1px solid;
+    --warning-hover-bg-color: #aa2a2a;
+    --warning-hover-text-color: #f4f4f4;
+    --warning-hover-border: #aa2a2a 1px solid;
+
+    --page-id-font-style: italic;
+    --page-id-border: none;
+    --page-id-bg-color: transparent;
+    --page-id-text-color: #f4f4f4;
+    --page-id-margin-bottom: 0;
+
+    --options-border: none;
+    --options-border-top: #f4f4f4 1px solid;
+    --options-border-bottom: #f4f4f4 1px solid;
+    --options-border-left: 0;
+    --options-border-right: 0;
+    --options-bg-color: transparent;
+
+}

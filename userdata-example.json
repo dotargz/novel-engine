@@ -1,0 +1,15 @@
+{
+    "character": {
+		"race": "human",
+		"class": "warrior",
+		"sex": "female",
+		"name": "Arya"
+	},
+	"story": {
+        "pagesDone": [
+            "beginning",
+            "beginning II"
+        ],
+        "currentPage": "beginning III"
+    }
+}
