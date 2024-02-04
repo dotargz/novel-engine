@@ -1,9 +1,8 @@
 {
-	"character": {
-		"vaild_races": ["human", "elf", "orc"],
-		"vaild_classes": ["warrior", "mage", "thief"],
-		"vaild_sexs": ["female", "male", "non-binary", "none"],
-		"vaild_alignments": ["good", "neutral", "evil"]
+	"metadata": {
+		"title": "Demo",
+		"author": "RPG Adventure",
+		"version": "0.1"
 	},
 	"story": {
 		"beginning": {
@@ -29,19 +28,19 @@
 			"text": "Your headache persists, but you feel a little better. Questions rush through your mind; Who are you? Why are you here? Maybe these questions will be answered in time... As you look in the mirror, you realize you don't even remember your name. But one thing is clear, you are a...",
 			"options": {
 				"female": {
-					"text": "female {{character.race}}",
+					"text": "female {{race}}",
 					"action": "set-sex, female; goto, beginning III"
 				},
 				"male": {
-					"text": "male {{character.race}}",
+					"text": "male {{race}}",
 					"action": "set-sex, male; goto, beginning III"
 				},
 				"non-binary": {
-					"text": "non-binary {{character.race}}",
+					"text": "non-binary {{race}}",
 					"action": "set-sex, non-binary; goto, beginning III"
 				},
 				"none": {
-					"text": "{{character.race}}",
+					"text": "{{race}}",
 					"action": "set-sex, none; goto, beginning III"
 				}
 			}

@@ -28,25 +28,16 @@ function getAllValidPages()
     return array_keys($story['story']);
 }
 
-# {{character.name}} will be replaced with $_SESSION['user_data']['character']['name'], etc.
+# {{name}} will be replaced with $_SESSION['user_data']['kv']['name'], etc.
 function parseText($text)
 {
     $text = preg_replace_callback('/{{(.*?)}}/', function ($matches) {
-        $keys = explode('.', $matches[1]);
-        $value = $_SESSION['user_data'];
-        foreach ($keys as $key) {
-            if (isset($value[$key])) {
-                $value = $value[$key];
-            } else {
-                return '';
-            }
-        }
-        return $value;
+        return $_SESSION['user_data']['kv'][$matches[1]];
     }, $text);
     return $text;
 }
 
-# execute the action (set-race would set $_SESSION['user_data']['character']['race'] = 'human')
+# execute the action (set-race would set $_SESSION['user_data']['kv']['race'] = 'human')
 # and goto would set $_SESSION['user_data']['story']['currentPage'] = 'beginning III' and reload the page
 function executeAction($actions)
 {
@@ -73,7 +64,7 @@ function executeAction($actions)
 
             case str_sw($key, 'set-'):
                 $key = str_replace('set-', '', $key);
-                $_SESSION['user_data']['character'][$key] = $value;
+                $_SESSION['user_data']['kv'][$key] = $value;
                 break;
 
             default:
@@ -109,7 +100,7 @@ function runAction($action)
 #        }
 #    }
 #}
-# RETURNS: (assuming $_SESSION['user_data']['character']['class'] != 'warrior')
+# RETURNS: (assuming $_SESSION['user_data']['kv']['class'] != 'warrior')
 # "options": {
 #    "goto-town-square": {
 #        "text": "Go to the town square",
