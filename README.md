@@ -31,7 +31,6 @@ The metadata object contains axillary information about the story. This can incl
         "author": "John Doe",
         "version": "1.0"
     }
-    ... rest of story.json ...
 }
 ```
 
@@ -50,7 +49,7 @@ To define a page, simply create a new key-value pair in the story object. The ke
             "heading": "Page Heading",
             "text": "Page Text",
             "options": {
-                ... options ...
+                "... options ..."
             }
         }
     }
