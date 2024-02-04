@@ -120,9 +120,9 @@ To use variables in the story, simply use the `{{KEY}}` syntax. The engine will 
 
 ## Roadmap
 
-- [] Add per-page CSS
-- [] Add markdown support
-- [] Add good image support
+- [ ] Add per-page CSS
+- [ ] Add markdown support
+- [ ] Add good image support
 
 ## Contributing
 
