@@ -5,7 +5,7 @@ A web-based low-code choose-your-own-adventure engine with:
 - dynamic variables
 - choice requirements
 - theming
-- an opinionated out of the box style
+- opinionated demo
 - and more!
 
 ## Installation
@@ -22,7 +22,7 @@ php -S localhost:80
 
 To customize the story, simply edit the `story.json` file. The file is a JSON object that contains the story's structure. The engine will read the file and display the story to the user.
 
-Visit the wiki: https://github.com/dotargz/novel-engine/wiki/Story.json
+Visit the wiki for instructions : https://github.com/dotargz/novel-engine/wiki/Story.json
 
 ## Roadmap
 
