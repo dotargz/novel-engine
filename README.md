@@ -1,5 +1,7 @@
 # NovelEngine
+
 Novel Engine is a web-based low-code choose-your-own-adventure engine with:
+
 - dynamic characters
 - choice requirements
 - theming
@@ -27,10 +29,10 @@ The metadata object contains axillary information about the story. This can incl
 ```json
 {
 	"metadata": {
-        "title": "My Story",
-        "author": "John Doe",
-        "version": "1.0"
-    }
+		"title": "My Story",
+		"author": "John Doe",
+		"version": "1.0"
+	}
 }
 ```
 
@@ -59,6 +61,7 @@ To define a page, simply create a new key-value pair in the story object. The ke
 #### Options
 
 To define an option, simply create a new key-value pair in the options object. The key is the name of the option, and the value is an object that contains the option's text and action.
+
 ```json
 {
 	"options": {
@@ -73,48 +76,54 @@ To define an option, simply create a new key-value pair in the options object. T
 	}
 }
 ```
+
 #### Actions
+
 Actions are written in a simple, human-readable format. They are separated by semicolons and are in the form of `action, argument`. The engine will read the actions and perform them in the order they are written.
 
 The following actions are currently supported:
+
 - `set-KEY, VALUE`: Sets a key-value pair in the story's state. This can be used to store the user's progress or to change the story's behavior.
 - `goto, pagename`: Jumps to the specified page.
 - `end`: Ends the story.
 
 ### Variables
+
 To use variables in the story, simply use the `{{KEY}}` syntax. The engine will replace the variable with the value stored in the story's state.
 
 ```json
 {
-    "story": {
-        "start": {
-            "heading": "Welcome to the story",
-            "text": "What is your race?",
-            "options": {
-                "human": {
-                    "text": "Human",
-                    "action": "set-race, human; goto, next1"
-                },
-            }
-        },
-        "next1": {
-            "heading": "Next Page",
-            "text": "You are a {{race}} now.",
-            "options": {
-                "next": {
-                    "text": "end the story",
-                    "action": "end"
-                }
-            }
-        },
-    }
+	"story": {
+		"start": {
+			"heading": "Welcome to the story",
+			"text": "What is your race?",
+			"options": {
+				"human": {
+					"text": "Human",
+					"action": "set-race, human; goto, next1"
+				}
+			}
+		},
+		"next1": {
+			"heading": "Next Page",
+			"text": "You are a {{race}} now.",
+			"options": {
+				"next": {
+					"text": "end the story",
+					"action": "end"
+				}
+			}
+		}
+	}
 }
 ```
 
 ## Roadmap
+
 - [] Add per-page CSS
 - [] Add markdown support
 - [] Add good image support
 
 ## Contributing
+
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
