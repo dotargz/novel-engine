@@ -1,6 +1,6 @@
-# NovelEngine
+# Novel Engine
 
-Novel Engine is a web-based low-code choose-your-own-adventure engine with:
+A web-based low-code choose-your-own-adventure engine with:
 
 - dynamic characters
 - choice requirements
