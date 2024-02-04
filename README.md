@@ -38,7 +38,24 @@ The metadata object contains axillary information about the story. This can incl
 
 ### Story Object
 
-The story object the meat of the story.json file. It contains every page and every option that the user could take along their journey.
+The story object the meat of the story.json file. It contains every page and every option that the user could take along their journey. This README will go over how to define pages, options, and actions; but ***it may be easier to understand by looking the the `story.json` file in the repository.***
+
+```json
+{
+    "story": {
+        "pagename": {
+            "heading": "Page Heading",
+            "text": "Page Text",
+            "options": {
+                "optionname": {
+                    "text": "Text that will be displayed",
+                    "action": "set-KEY, VALUE; goto, pagename1"
+                }
+            }
+        }
+    }
+}
+```
 
 #### Pages
 
