@@ -38,7 +38,7 @@ Visit the wiki for instructions : https://github.com/dotargz/novel-engine/wiki/S
 ## Roadmap
 
 - [ ] Add per-page CSS
-- [ ] Add markdown support
+- [ ] Add page transitions
 - [ ] Add good image support
 
 ## Contributing
