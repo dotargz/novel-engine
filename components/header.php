@@ -1,3 +1,9 @@
+<?php
+if (!isset($INTERGITY_CHECK)) {
+    header("Location: /");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

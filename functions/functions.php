@@ -1,5 +1,8 @@
 <?php
-
+if (!isset($INTERGITY_CHECK)) {
+    header("Location: /");
+    exit();
+}
 # use story.json to get the story and its options
 function getStory($title)
 {

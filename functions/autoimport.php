@@ -1,4 +1,9 @@
 <?php
+if (!isset($INTERGITY_CHECK)) {
+    header("Location: /");
+    exit();
+}
+
 session_start();
 if (!isset($_SESSION['user_data'])) {
     $_SESSION['user_data'] = [];

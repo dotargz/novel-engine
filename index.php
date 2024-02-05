@@ -1,5 +1,6 @@
 <?php
 # session is started in autoimport.php
+$INTERGITY_CHECK = true;
 include_once $_SERVER['DOCUMENT_ROOT'] . '/functions/autoimport.php';
 
 if (!isset($_SESSION['user_data']['story']['currentPage'])) {
@@ -9,6 +10,16 @@ if (!isset($_SESSION['user_data']['story']['currentPage'])) {
 # interpret the option if it is set
 if (isset($_GET['option'])) {
     runActionFromPage($_SESSION['user_data']['story']['currentPage'], $_GET['option']);
+}
+
+if (isset($_GET['reset'])) {
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/functions/cleardata.php';
+    exit();
+}
+
+if (isset($_GET['next-theme'])) {
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/functions/themecycle.php';
+    exit();
 }
 
 $page = getStory($_SESSION['user_data']['story']['currentPage']);
@@ -33,8 +44,8 @@ include 'components/header.php';
     }
     ?>
     <div class="settings">
-    <a href="/functions/cleardata.php" class="btn reset"><i class="fas fa-trash-alt"></i></a>
-        <a href="/functions/themecycle.php" class="btn theme"><i class="fas fa-adjust"></i></a>
+    <a href="/?reset" class="btn reset"><i class="fas fa-trash-alt"></i></a>
+        <a href="/?next-theme" class="btn theme"><i class="fas fa-adjust"></i></a>
 
     </div>
 </div>
