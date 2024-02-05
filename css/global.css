@@ -18,6 +18,17 @@ html {
 	justify-content: center;
 }
 
+/* Define a transition duration during page visits */
+html.is-changing .transition-fade {
+	transition: opacity 0.25s;
+	opacity: 1;
+}
+
+/* Define the styles for the unloaded pages */
+html.is-animating .transition-fade {
+	opacity: 0;
+}
+
 body {
 	width: 100%;
 	height: 100%;
@@ -38,7 +49,7 @@ body > div {
 	margin: 0 auto;
 	padding: 1rem;
 	border: var(--border);
-    border-radius: var(--border-radius);
+	border-radius: var(--border-radius);
 
 	display: flex;
 	flex-direction: column;
@@ -48,16 +59,16 @@ body > div {
 }
 
 body > div > span.page-id {
-    width: fit-content;
+	width: fit-content;
 	font-style: var(--page-id-font-style);
-    border: var(--page-id-border);
-    background-color: var(--page-id-bg-color);
-    color: var(--page-id-text-color);
-    margin-bottom: var(--page-id-margin-bottom);
+	border: var(--page-id-border);
+	background-color: var(--page-id-bg-color);
+	color: var(--page-id-text-color);
+	margin-bottom: var(--page-id-margin-bottom);
 }
 
 body > div > h1 {
-    font-family: var(--display-font);
+	font-family: var(--display-font);
 	margin-bottom: 1rem;
 }
 
@@ -80,12 +91,12 @@ body > div > div.options {
 	align-items: center;
 	justify-content: flex-start;
 	gap: 1rem;
-    border: var(--options-border);
+	border: var(--options-border);
 	border-top: var(--options-border-top);
 	border-bottom: var(--options-border-bottom);
-    border-left: var(--options-border-left);
-    border-right: var(--options-border-right);
-    background-color: var(--options-bg-color);
+	border-left: var(--options-border-left);
+	border-right: var(--options-border-right);
+	background-color: var(--options-bg-color);
 	padding: 0.5rem;
 }
 
@@ -116,17 +127,17 @@ a {
 	color: var(--button-text-color);
 	background-color: var(--button-bg-color);
 	border: var(--button-border);
-    border-radius: var(--button-border-radius);
+	border-radius: var(--button-border-radius);
 }
 
 div.options > div {
-    margin-left: auto;
+	margin-left: auto;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 1rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 1rem;
 }
 
 a.reset {

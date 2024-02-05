@@ -14,6 +14,18 @@ if (!isset($INTERGITY_CHECK)) {
         <?php echo $title; ?> ~ NovelEngine
     </title>
 
+    <script src="https://unpkg.com/swup@4"></script>
+    <script src="https://unpkg.com/@swup/head-plugin@2"></script>
+    <script>
+        const swup = new Swup({
+            plugins: [new SwupHeadPlugin({
+                awaitAssets: true,
+                persistTags: 'script[src], style'
+            })]
+        });
+    </script>
+
+
     <script src="https://kit.fontawesome.com/9cb2f2488a.js" crossorigin="anonymous"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,4 +43,4 @@ if (!isset($INTERGITY_CHECK)) {
 </div>
 
 <body>
-    <div class="container">
+    <div id="swup" class="container transition-fade">

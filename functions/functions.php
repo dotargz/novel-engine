@@ -82,6 +82,11 @@ function str_sw($haystack, $needle)
     return strpos($haystack, $needle) === 0;
 }
 
+function str_ew($haystack, $needle)
+{
+    return substr($haystack, -strlen($needle)) === $needle;
+}
+
 function runAction($action)
 {
     $actions = parseAction($action);
