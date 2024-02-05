@@ -12,6 +12,17 @@ A web-based low-code choose-your-own-adventure engine with:
 
 To install the engine, simply clone the repository and start a PHP server in the root directory. The engine is written in PHP and requires a server to run.
 
+### Linux (recommended)
+To install PHP and the engine on a Linux machine, run the following commands in the terminal. The commands will install PHP and clone the repository into the default web directory. Make
+```bash
+sudo apt install php git
+cd /var/www/html
+git clone https://github.com/dotargz/novel-engine .
+```
+
+### Windows
+Follow the instructions on the [official PHP website](https://www.php.net/manual/en/install.windows.tools.php) to install PHP. Then, after installing git from the [official website](https://git-scm.com/), run the following commands in the command prompt to clone the repository and start the server.
+
 ```bash
 git clone https://github.com/dotargz/novel-engine
 cd novel-engine
