@@ -76,6 +76,7 @@ body > div > img.header-image {
 body > div > div.options {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: flex-start;
 	gap: 1rem;
@@ -86,6 +87,25 @@ body > div > div.options {
     border-right: var(--options-border-right);
     background-color: var(--options-bg-color);
 	padding: 0.5rem;
+}
+
+span.software-version {
+	font-size: 0.8rem;
+	text-align: center;
+	color: var(--text-color);
+}
+
+/* standardize simple formatting */
+b {
+	font-weight: bold;
+}
+
+i {
+	font-style: italic;
+}
+
+u {
+	text-decoration: underline;
 }
 
 /* button */
@@ -122,6 +142,19 @@ a.reset:hover {
 		font-family: var(--text-font);
 		font-weight: normal;
 		content: " Reset";
+	}
+}
+
+@media (max-width: 700px) {
+	a.reset::after {
+		content: " Reset";
+	}
+	a.reset:hover::after {
+		content: "";
+	}
+	/* no margin auto for reset and theme buttons */
+	div.options > div {
+		margin-left: 0;
 	}
 }
 
