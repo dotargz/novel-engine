@@ -1,7 +1,7 @@
 <?php
 # session is started in autoimport.php
 $INTERGITY_CHECK = true;
-include_once $_SERVER['DOCUMENT_ROOT'] . '/functions/autoimport.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/src/functions/autoimport.php';
 
 if (!isset($_SESSION['user_data']['story']['currentPage'])) {
     $_SESSION['user_data']['story']['currentPage'] = 'beginning';
@@ -13,19 +13,19 @@ if (isset($_GET['option'])) {
 }
 
 if (isset($_GET['reset'])) {
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/functions/cleardata.php';
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/src/functions/cleardata.php';
     exit();
 }
 
 if (isset($_GET['next-theme'])) {
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/functions/themecycle.php';
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/src/functions/themecycle.php';
     exit();
 }
 
 $page = getStory($_SESSION['user_data']['story']['currentPage']);
 $title = $_SESSION['user_data']['story']['currentPage'];
 
-include 'components/header.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/src/components/header.php';
 ?>
 <span class="page-id">
     <?php echo $title; ?>
@@ -50,6 +50,6 @@ include 'components/header.php';
     </div>
 </div>
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/components/footer.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/src/components/footer.php';
 ?>
 

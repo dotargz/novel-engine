@@ -35,8 +35,8 @@ if (!isset($INTERGITY_CHECK)) {
         rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/css/themes/<?php echo $_SESSION['theme']; ?>.css">
-    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="public/css/themes/<?php echo $_SESSION['theme']; ?>.css">
+    <link rel="stylesheet" href="public/css/global.css">
 
 </head>
 
