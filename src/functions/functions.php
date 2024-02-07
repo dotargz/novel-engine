@@ -1,5 +1,8 @@
 <?php
-
+if (!isset($INTERGITY_CHECK)) {
+    header("Location: /");
+    exit();
+}
 # use story.json to get the story and its options
 function getStory($title)
 {
@@ -77,6 +80,11 @@ function executeAction($actions)
 function str_sw($haystack, $needle)
 {
     return strpos($haystack, $needle) === 0;
+}
+
+function str_ew($haystack, $needle)
+{
+    return substr($haystack, -strlen($needle)) === $needle;
 }
 
 function runAction($action)

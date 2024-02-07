@@ -1,3 +1,9 @@
+<?php
+if (!isset($INTERGITY_CHECK)) {
+    header("Location: /");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +14,18 @@
         <?php echo $title; ?> ~ NovelEngine
     </title>
 
+    <script src="https://unpkg.com/swup@4"></script>
+    <script src="https://unpkg.com/@swup/head-plugin@2"></script>
+    <script>
+        const swup = new Swup({
+            plugins: [new SwupHeadPlugin({
+                awaitAssets: true,
+                persistTags: 'script[src], style'
+            })]
+        });
+    </script>
+
+
     <script src="https://kit.fontawesome.com/9cb2f2488a.js" crossorigin="anonymous"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,12 +35,12 @@
         rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/css/themes/<?php echo $_SESSION['theme']; ?>.css">
-    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="public/css/themes/<?php echo $_SESSION['theme']; ?>.css">
+    <link rel="stylesheet" href="public/css/global.css">
 
 </head>
 
 </div>
 
 <body>
-    <div class="container">
+    <div id="swup" class="container transition-fade">

@@ -47,7 +47,7 @@
 		},
 		"beginning III": {
 			"heading": "An adventure begins...",
-			"text": "You look around the room and see a small chest at the foot of the bed. You open it and find a small bag of coins, a dagger, and a note. The note reads, 'You are in the town of Oakwood. You were found unconcious in the woods. You are welcome to stay here as long as you need. If you are looking for work, talk to the innkeeper.'",
+			"text": "You look around the room and see a small chest at the foot of the bed. You open it and find <b>a small bag of coins, a dagger, and a note.</b> The note reads, <i>'You are in the town of Oakwood. You were found unconcious in the woods. You are welcome to stay here as long as you need. If you are looking for work, talk to the innkeeper.'</i> What do you do?",
 			"options": {
 				"get-up": {
 					"text": "Get up and explore the town",

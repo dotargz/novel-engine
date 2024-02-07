@@ -1,5 +1,9 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/functions/autoimport.php';
+if (!isset($INTERGITY_CHECK)) {
+    header("Location: /");
+    exit();
+}
+
 $themes = ['default', 'dark'];
 
 $themeIndex = array_search($_SESSION['theme'], $themes);
