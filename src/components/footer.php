@@ -8,7 +8,7 @@ if (!isset($INTERGITY_CHECK)) {
 <?php
 if ($showVersion) {
     echo '<span class="software-version">';
-    echo 'novel engine ' . $softwareVersion . ' running on ' . $_SERVER['SERVER_SOFTWARE'];
+    echo '<a href="https://github.com/dotargz/novel-engine/" target="_blank">Novel Engine</a> ' . $softwareVersion . ' running on ' . $_SERVER['SERVER_SOFTWARE'];
     echo '</span>';
 }
 ?>
