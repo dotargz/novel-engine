@@ -130,6 +130,11 @@ a.btn {
 	border-radius: var(--button-border-radius);
 }
 
+a {
+	text-decoration: underline;
+	color: var(--link-color);
+}
+
 div.options > div {
 	margin-left: auto;
 
