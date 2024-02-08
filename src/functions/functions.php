@@ -11,18 +11,15 @@ function getStory($title)
     return $story["story"][$title];
 }
 
-# actions are written like "set-race, human; goto, beginning III"
-function parseAction($action)
-{
-    $action = explode(';', $action);
-    $actions = [];
-    foreach ($action as $a) {
-        $a = explode(',', $a);
-        $actions[trim($a[0])] = trim($a[1]);
+# actions are written like ["set-race: human", "goto: beginning III"]
+function parseAction($actions) {
+    $parsedActions = [];
+    foreach ($actions as $action) {
+        $action = explode(': ', $action);
+        $parsedActions[$action[0]] = $action[1];
     }
-    return $actions;
+    return $parsedActions;
 }
-
 
 function getAllValidPages()
 {
@@ -31,12 +28,14 @@ function getAllValidPages()
     return array_keys($story['story']);
 }
 
-# {{name}} will be replaced with $_SESSION['user_data']['kv']['name'], etc.
+# template parser. {{name}} will be replaced with $_SESSION['user_data']['kv']['name']. it shoudl work if there are multiple {{name}} in the same string
 function parseText($text)
 {
-    $text = preg_replace_callback('/{{(.*?)}}/', function ($matches) {
-        return $_SESSION['user_data']['kv'][$matches[1]];
-    }, $text);
+    $matches = [];
+    preg_match_all('/{{(.*?)}}/', $text, $matches);
+    foreach ($matches[1] as $match) {
+        $text = str_replace('{{' . $match . '}}', $_SESSION['user_data']['kv'][$match], $text);
+    }
     return $text;
 }
 
@@ -93,27 +92,12 @@ function runAction($action)
     executeAction($actions);
 }
 
-
-# remove any options that have a "requires" key that is not met by one of our user_data keys
-# "options": {
-#    "goto-town-square": {
-#        "text": "Go to the town square",
-#        "action": "goto, town square"
-#    },
-#    "rush-to-help": {
-#        "text": "Rush to help the town guard",
-#        "action": "goto, bandit attack",
-#        "requirements": {
-#            "class": "warrior"
-#        }
+# get all valid options for the current page using the $_SESSION['user_data']['kv'] array and the requirements array
+# requirements are written like
+# "requirements": {
+#        "race": ["orc", "human"]
 #    }
-#}
-# RETURNS: (assuming $_SESSION['user_data']['kv']['class'] != 'warrior')
-# "options": {
-#    "goto-town-square": {
-#        "text": "Go to the town square",
-#        "action": "goto, town square"
-#    }
+# setting reqirements is optional
 function validOptions($options)
 {
     $validOptions = [];
@@ -122,7 +106,7 @@ function validOptions($options)
             $requirements = $option['requirements'];
             $valid = true;
             foreach ($requirements as $key => $value) {
-                if (getUserData($key) != $value) {
+                if (!in_array($_SESSION['user_data']['kv'][$key], $value)) {
                     $valid = false;
                 }
             }
@@ -151,21 +135,29 @@ function runActionFromPage($currentPage, $option)
     $actions = parseAction($page['options'][$option]['action']);
     executeAction($actions);
 }
-#session is started in autoimport.php
-function getAllUserData()
-{
-    return $_SESSION['user_data'];
-}
 
-function getUserData($key)
+function getKV($key)
 {
-    if (!isset($_SESSION['user_data'][$key])) {
+    if (!isset($_SESSION['user_data']['kv'][$key])) {
         return null;
     }
-    return $_SESSION['user_data'][$key];
+    return $_SESSION['user_data']['kv'][$key];
 }
 
-function setUserData($key, $value)
+function setKV($key, $value)
 {
-    $_SESSION['user_data'][$key] = $value;
+    $_SESSION['user_data']['kv'][$key] = $value;
+}
+
+function getStoryData($key)
+{
+    if (!isset($_SESSION['user_data']['story'][$key])) {
+        return null;
+    }
+    return $_SESSION['user_data']['story'][$key];
+}
+
+function setStoryData($key, $value)
+{
+    $_SESSION['user_data']['story'][$key] = $value;
 }

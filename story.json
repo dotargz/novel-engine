@@ -11,15 +11,15 @@
 			"options": {
 				"human": {
 					"text": "I'm a human",
-					"action": "set-race, human; goto, beginning II"
+					"action": ["set-race: human", "goto: beginning II"]
 				},
 				"elf": {
 					"text": "I'm an elf",
-					"action": "set-race, elf; goto, beginning II"
+					"action": ["set-race: elf", "goto: beginning II"]
 				},
 				"orc": {
 					"text": "I'm an orc",
-					"action": "set-race, orc; goto, beginning II"
+					"action": ["set-race: orc", "goto: beginning II"]
 				}
 			}
 		},
@@ -29,19 +29,19 @@
 			"options": {
 				"female": {
 					"text": "female {{race}}",
-					"action": "set-sex, female; goto, beginning III"
+					"action": ["set-sex: female", "goto: beginning III"]
 				},
 				"male": {
 					"text": "male {{race}}",
-					"action": "set-sex, male; goto, beginning III"
+					"action": ["set-sex: male", "goto: beginning III"]
 				},
 				"non-binary": {
 					"text": "non-binary {{race}}",
-					"action": "set-sex, non-binary; goto, beginning III"
+					"action": ["set-sex: non-binary", "goto: beginning III"]
 				},
 				"none": {
 					"text": "{{race}}",
-					"action": "set-sex, none; goto, beginning III"
+					"action": ["set-sex: none", "goto: beginning III"]
 				}
 			}
 		},
@@ -51,11 +51,11 @@
 			"options": {
 				"get-up": {
 					"text": "Get up and explore the town",
-					"action": "goto, beginning IV"
+					"action": ["goto: beginning IV"]
 				},
 				"stay-in-bed": {
 					"text": "Stay in bed and rest",
-					"action": "goto, bedroom idle"
+					"action": ["goto: bedroom idle"]
 				}
 			}
 		},
@@ -65,7 +65,7 @@
 			"options": {
 				"get-up": {
 					"text": "Get up and explore the town",
-					"action": "goto, beginning IV"
+					"action": ["goto: beginning IV"]
 				}
 			}
 		},
@@ -75,15 +75,15 @@
 			"options": {
 				"goto-town-square": {
 					"text": "Go to the town square",
-					"action": "goto, town square"
+					"action": ["goto: town square"]
 				},
-                "rush-to-help": {
-                    "text": "Rush to help the town guard",
-                    "action": "goto, bandit attack",
-                    "requirements": {
-                        "class": "warrior"
-                    }
-                }
+				"rush-to-help": {
+					"text": "Rush to help the town guard",
+					"action": ["goto: bandit attack", "set-quest: bandit attack"],
+					"requirements": {
+						"race": ["orc", "human"]
+					}
+				}
 			}
 		},
 		"town square": {
@@ -92,7 +92,7 @@
 			"options": {
 				"end": {
 					"text": "End",
-					"action": "end"
+					"action": ["end"]
 				}
 			}
 		},
@@ -102,7 +102,7 @@
 			"options": {
 				"end": {
 					"text": "End",
-					"action": "end"
+					"action": ["end"]
 				}
 			}
 		}
