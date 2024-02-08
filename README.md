@@ -1,4 +1,4 @@
-# ![Novel Engine](https://raw.githubusercontent.com/dotargz/novel-engine/main/header.png)
+# ![Novel Engine (made by blueskye)](https://github.com/dotargz/novel-engine/assets/57809064/474ac615-8c1f-42c9-979d-d1faecee2f58)
 
 A web-based low-code choose-your-own-adventure engine written in PHP with:
 - dynamic variables
