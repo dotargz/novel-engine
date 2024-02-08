@@ -40,7 +40,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/src/components/header.php';
     <?php
     foreach (validOptions($page['options']) as $optionName => $option) {
         # Use $optionName as the key to get the action
-        echo "<a href='/?option=" . $optionName . "'>" . parseText($option['text']) . "</a>";
+        echo "<a class='btn' href='/?option=" . $optionName . "'>" . parseText($option['text']) . "</a>";
     }
     ?>
     <div class="settings">
