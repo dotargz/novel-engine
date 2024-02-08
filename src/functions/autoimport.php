@@ -12,7 +12,7 @@ if (!isset($_SESSION['theme'])) {
     $_SESSION['theme'] = 'default';
 }
 
-$softwareVersion = 'v1.2.0-dev';
+$softwareVersion = 'v1.2.0-stable';
 
 if (strpos($softwareVersion, '-dev') !== false) {
     $showVersion = true;
