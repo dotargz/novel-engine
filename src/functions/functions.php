@@ -36,7 +36,16 @@ function parseText($text)
     foreach ($matches[1] as $match) {
         $text = str_replace('{{' . $match . '}}', $_SESSION['user_data']['kv'][$match], $text);
     }
-    return $text;
+    // if the value that we just made is just an integer, we can return it as an integer
+    if (is_numeric($text)) {
+        return (int) $text;
+    }
+    // if it contains only numbers and +,-,*,/,. we can do a math operation
+    else if (preg_match('/^[0-9\+\-\*\/\.]+$/', $text)) {
+        return eval('return ' . $text . ';');
+    } else {
+        return $text;
+    }
 }
 
 # execute the action (set-race would set $_SESSION['user_data']['kv']['race'] = 'human')
@@ -66,8 +75,9 @@ function executeAction($actions)
 
             case str_sw($key, 'set-'):
                 $key = str_replace('set-', '', $key);
-                $_SESSION['user_data']['kv'][$key] = $value;
+                $_SESSION['user_data']['kv'][$key] = parseText($value);
                 break;
+
 
             default:
                 break;

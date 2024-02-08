@@ -4,6 +4,9 @@ if (!isset($INTERGITY_CHECK)) {
     exit();
 }
 session_start();
-$_SESSION['user_data'] = [];
+$_SESSION['user_data'] = [
+    'kv' => [],
+    'story' => []
+];
 header('Location: /');
 ?>

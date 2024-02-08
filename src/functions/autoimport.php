@@ -6,7 +6,10 @@ if (!isset($INTERGITY_CHECK)) {
 
 session_start();
 if (!isset($_SESSION['user_data'])) {
-    $_SESSION['user_data'] = [];
+    $_SESSION['user_data'] = [
+        'kv' => [],
+        'story' => []
+    ];
 }
 if (!isset($_SESSION['theme'])) {
     $_SESSION['theme'] = 'default';

@@ -11,7 +11,7 @@ if (!isset($INTERGITY_CHECK)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?php echo $title; ?> ~ NovelEngine
+        <?php echo $title; ?> ~ Novel Engine
     </title>
 
     <script src="https://unpkg.com/swup@4"></script>
