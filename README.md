@@ -1,5 +1,4 @@
-# ![Novel Engine](https://raw.githubusercontent.com/dotargz/novel-engine/main/header.png)
-
+# Novel Engine
 A web-based low-code choose-your-own-adventure engine written in PHP with:
 - dynamic variables
 - choice requirements
