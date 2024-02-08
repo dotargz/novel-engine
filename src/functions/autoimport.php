@@ -15,7 +15,7 @@ if (!isset($_SESSION['theme'])) {
     $_SESSION['theme'] = 'default';
 }
 
-$softwareVersion = 'v1.3.0-dev';
+$softwareVersion = 'v1.3.1-dev';
 
 if (strpos($softwareVersion, '-dev') !== false) {
     $showVersion = true;
