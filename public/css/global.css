@@ -120,7 +120,7 @@ u {
 }
 
 /* button */
-a {
+a.btn {
 	display: inline-block;
 	padding: 0.5rem 1rem;
 	text-decoration: none;
@@ -140,12 +140,12 @@ div.options > div {
 	gap: 1rem;
 }
 
-a.reset {
+a.btn.reset {
 	background-color: var(--warning-bg-color);
 	color: var(--warning-text-color);
 }
 
-a.reset:hover {
+a.btn.reset:hover {
 	background-color: var(--warning-hover-bg-color);
 	color: var(--warning-hover-text-color);
 	border: var(--warning-hover-border);
@@ -157,10 +157,10 @@ a.reset:hover {
 }
 
 @media (max-width: 700px) {
-	a.reset::after {
+	a.btn.reset::after {
 		content: " Reset";
 	}
-	a.reset:hover::after {
+	a.btn.reset:hover::after {
 		content: "";
 	}
 	/* no margin auto for reset and theme buttons */
@@ -169,7 +169,7 @@ a.reset:hover {
 	}
 }
 
-a:hover {
+a.btn:hover {
 	background-color: var(--button-hover-bg-color);
 	color: var(--text-color-secondary);
 }
