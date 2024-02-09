@@ -3,10 +3,16 @@ if (!isset($INTERGITY_CHECK)) {
     header("Location: /");
     exit();
 }
-session_start();
 $_SESSION['user_data'] = [
     'kv' => [],
     'story' => []
 ];
-header('Location: /');
+# if headers are already sent, do meta refresh
+if (headers_sent()) {
+    echo '<meta http-equiv="refresh" content="0;url=/" />';
+    exit();
+} else {
+    header('Location: /');
+    exit();
+}
 ?>
