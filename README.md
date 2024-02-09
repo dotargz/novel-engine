@@ -9,10 +9,10 @@ A web-based low-code choose-your-own-adventure engine written in PHP with:
 
 ## Installation
 
-To install the engine, clone the repository and start a PHP server in the root directory.
+To install the engine, clone the repository and start a PHP server in the root directory. 
 
-### Linux (recommended)
-To install PHP and the engine on a Linux machine, run the following commands in the terminal. The commands will install PHP and clone the repository into the default web directory.
+### Linux 
+(Recommended for servers) To install PHP and the engine on a Linux machine, run the following commands in the terminal. The commands will install PHP and clone the repository into the default web directory.
 ```bash
 sudo apt install php git
 cd /var/www/html
@@ -30,16 +30,16 @@ php -S localhost:80
 
 ## Usage
 
-To customize the story, edit the `story.json` file, which contains the story's structure. The engine will read the file and display the story to the user.
+To customize the story, edit the story structure contained in the `story.json` file. The engine reads that file to display the story as a website. To change the style or location of items, you can edit files in the public directory, compontents folder, or index.php. 
 
-Visit the wiki for instructions: https://github.com/dotargz/novel-engine/wiki/Story.json
+Visit the wiki for in-depth documentation and instructions: https://github.com/dotargz/novel-engine/wiki/
 
 ## Roadmap
-
+View the [GitHub Project](https://github.com/users/dotargz/projects/2) with all open Roadmap issues and PRs.
 - [ ] Add per-page CSS
 - [ ] Add page transitions
 - [ ] Add good image support
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome! For major changes, please open an issue to discuss what you would like to change.
