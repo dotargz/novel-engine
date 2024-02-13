@@ -24,4 +24,3 @@ if (strpos($softwareVersion, '-dev') !== false) {
 }
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/src/functions/functions.php';
-?>

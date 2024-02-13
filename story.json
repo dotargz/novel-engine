@@ -21,7 +21,8 @@
 					"text": "I'm an orc",
 					"action": ["set-race: orc", "goto: beginning II"]
 				}
-			}
+			},
+			"theme": "default"
 		},
 		"beginning II": {
 			"heading": "An adventure begins?",
@@ -43,7 +44,8 @@
 					"text": "{{race}}",
 					"action": ["set-sex: none", "goto: beginning III"]
 				}
-			}
+			},
+			"theme": "default"
 		},
 		"beginning III": {
 			"heading": "An adventure begins...",
@@ -57,7 +59,8 @@
 					"text": "Stay in bed and rest",
 					"action": ["goto: bedroom idle"]
 				}
-			}
+			},
+			"theme": "default"
 		},
 		"bedroom idle": {
 			"heading": "An adventure begins???",
@@ -67,7 +70,8 @@
 					"text": "Get up and explore the town",
 					"action": ["goto: beginning IV"]
 				}
-			}
+			},
+			"theme": "dark"
 		},
 		"beginning IV": {
 			"heading": "An adventure begins!",
@@ -84,7 +88,8 @@
 						"race": ["orc", "human"]
 					}
 				}
-			}
+			},
+			"theme": "default"
 		},
 		"town square": {
 			"heading": "End of Demo",
@@ -94,7 +99,8 @@
 					"text": "End",
 					"action": ["end"]
 				}
-			}
+			},
+			"theme": "default"
 		},
 		"bandit attack": {
 			"heading": "Bandit Attack",
@@ -104,7 +110,8 @@
 					"text": "End",
 					"action": ["end"]
 				}
-			}
+			},
+			"theme": "default"
 		}
 	}
 }

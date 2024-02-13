@@ -17,13 +17,20 @@ if (isset($_GET['reset'])) {
     exit();
 }
 
-if (isset($_GET['next-theme'])) {
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/src/functions/themecycle.php';
-    exit();
-}
-
 $page = getStory($_SESSION['user_data']['story']['currentPage']);
 $title = $_SESSION['user_data']['story']['currentPage'];
+
+# set the theme according to the $page['theme'] value
+if (isset($page['theme'])) {
+    # if the name of the theme is in the css/themes/ directory
+    if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/public/css/themes/' . $page['theme'] . '.css')) {
+        $_SESSION['theme'] = $page['theme'];
+    } else {
+        $_SESSION['theme'] = 'default';
+    }
+} else {
+    $_SESSION['theme'] = 'default';
+}
 
 include $_SERVER['DOCUMENT_ROOT'] . '/src/components/header.php';
 ?>
@@ -44,12 +51,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/src/components/header.php';
     }
     ?>
     <div class="settings">
-    <a href="/?reset" class="btn reset"><i class="fas fa-trash-alt"></i></a>
-        <a href="/?next-theme" class="btn theme"><i class="fas fa-adjust"></i></a>
-
+        <a href="/?reset" class="btn reset"><i class="fas fa-trash-alt"></i></a>
     </div>
 </div>
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/src/components/footer.php';
 ?>
-

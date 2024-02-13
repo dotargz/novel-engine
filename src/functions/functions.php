@@ -12,7 +12,8 @@ function getStory($title)
 }
 
 # actions are written like ["set-race: human", "goto: beginning III"]
-function parseAction($actions) {
+function parseAction($actions)
+{
     $parsedActions = [];
     foreach ($actions as $action) {
         $action = explode(': ', $action);
@@ -140,6 +141,9 @@ function runActionFromPage($currentPage, $option)
         return;
     }
     if (!in_array($option, array_keys(validOptions($page['options'])))) {
+        return;
+    }
+    if (!isset($page['options'][$option]['action'])) {
         return;
     }
     $actions = parseAction($page['options'][$option]['action']);
