@@ -9,7 +9,7 @@ A web-based low-code choose-your-own-adventure engine written in PHP with:
 
 ## Installation
 
-To install the engine, clone the repository and start a PHP server in the root directory. 
+To install the engine, clone the repository and start a PHP server in the directory created. 
 
 ### Linux 
 (Recommended for servers) To install PHP and the engine on a Linux machine, run the following commands in the terminal. The commands will install PHP and clone the repository into the default web directory.
